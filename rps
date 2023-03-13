@@ -1,0 +1,23 @@
+puts "Choose: rock, scissors or paper?"
+player_move = gets.chomp.downcase
+
+moves = ["rock", "paper", "scissors"]
+
+until moves.include?(player_move)
+  puts "Try again!"
+  player_move = gets.chomp.downcase
+end
+
+computer_move = moves.sample
+
+puts "Your choice #{player_move}, Computer choice #{computer_move}."
+
+if player_move == computer_move
+  puts "Draw!"
+elsif (player_move == "rock" && computer_move == "scissors") ||
+      (player_move == "scissors" && computer_move == "paper") ||
+      (player_move == "paper" && computer_move == "rock")
+  puts "You win!"
+else
+  puts "You lost!"
+end
